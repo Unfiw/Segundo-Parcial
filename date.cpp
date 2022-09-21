@@ -1,3 +1,5 @@
+//Marco Antonio Becerra Díaz - 22110085
+
 #include <iostream>
 #include <string>
 
@@ -85,7 +87,7 @@ int main() {
 
   do{
   system("clear");
-  std::cout << "Insert a date: " << std::endl;
+  std::cout << "Insert a date\ndd/mm/yy\n\n: " ;
   std::cin >> d;
   Date uwu = Date(d);
   std::cout << "Date: " << uwu.getDate() << std::endl;
