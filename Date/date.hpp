@@ -1,5 +1,3 @@
-//Marco Antonio Becerra Díaz - 22110085
-
 #include <iostream>
 #include <string>
 
@@ -10,8 +8,6 @@ private:
 
 public:
   std::string date;
-
-  void setDate(std::string _date) { date = _date; }
 
   std::string getDate() { return date; }
 
@@ -35,7 +31,6 @@ public:
     vYear(year);
 
     vDate();
-    Bisiesto();
   }
 
   void vDay(std::string day) { nDay = stoi(day); }
@@ -64,37 +59,19 @@ public:
       case 8:
       case 10:
       case 12:
-        if( nDay <= 31 ){ r = true; } else { r = false; }
+        if( nDay <= 31 ){ r = true; } else { r = false; } if (r = true){std::cout << "UwU" << std::endl;} 
         break;
       case 4:
       case 6:
       case 9:
       case 11:
-        if( nDay <= 30 ){ r = true; } else { r= false; }
+        if( nDay <= 30 ){ r = true; } else { r= false; } if (r = true){std::cout << "UwU" << std::endl;} 
+
         break;
       case 2:
         if( nDay <= 28 ){ r = true; } else { r= false; }
         d = Bisiesto();
         if(r == true || d == true){ std::cout << "UwU" << std::endl; exit; } else{std::cout << "The date not exist" << std::endl; }   
-      
     } 
   }
 };
-
-int main() {
-  std::string d = "";
-  char exitDate;
-
-  do{
-  system("clear");
-  std::cout << "Insert a date\ndd/mm/yy\n\n: " ;
-  std::cin >> d;
-  Date uwu = Date(d);
-  std::cout << "Date: " << uwu.getDate() << std::endl;
-  uwu.sToInt();
-  std::cout << "Press U to finish the program\n" << std::endl; std::cin >> exitDate;
-
-  }while(exitDate != 'U');
-  return 0;
- 
-}
