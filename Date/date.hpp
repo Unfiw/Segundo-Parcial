@@ -16,15 +16,15 @@ public:
     std::string day, month, year;
 
     day = date.substr(0, 2);
-    std::cout << day << std::endl;
+    std::cout <<"Day: "<< day << std::endl;
     date.erase(0, 3);
 
     month = date.substr(0, 2);
-    std::cout << month << std::endl;
+    std::cout << "Month: "<< month << std::endl;
     date.erase(0, 3);
 
     year = date.substr(0, 4);
-    std::cout << year << std::endl;
+    std::cout << "Year: "<< year << std::endl;
 
     vDay(day);
     vMonth(month);
@@ -42,15 +42,14 @@ public:
   Date(std::string _date) { date = _date; }
 
   bool Bisiesto() {
-
-    bool bisiesto;
-
+    
     if (nYear % 4 == 0 && nYear != 2000) { if(nDay == 29){ return true;}}
+    return false;
     
   }
     void vDate(){
 
-    bool r, d;
+    bool r = false, d = false;
     switch (nMonth) {
       case 1:
       case 3:
@@ -59,19 +58,18 @@ public:
       case 8:
       case 10:
       case 12:
-        if( nDay <= 31 ){ r = true; } else { r = false; } if (r = true){std::cout << "UwU" << std::endl;} 
+        if( nDay <= 31 ){ r = true; } if (r == true){std::cout << "\nUwuntu" << std::endl;}else{std::cout << "The date not exist" << std::endl;} 
         break;
       case 4:
       case 6:
       case 9:
       case 11:
-        if( nDay <= 30 ){ r = true; } else { r= false; } if (r = true){std::cout << "UwU" << std::endl;} 
-
-        break;
+        if( nDay <= 30 ){ r = true; } if (r == true){std::cout << "\nUwuntu" << std::endl;} else{std::cout << "\nThe date not exist" << std::endl;}
+      break;
       case 2:
-        if( nDay <= 28 ){ r = true; } else { r= false; }
+        if( nDay <= 28 ){ r = true; } 
         d = Bisiesto();
-        if(r == true || d == true){ std::cout << "UwU" << std::endl; exit; } else{std::cout << "The date not exist" << std::endl; }   
+        if(r == true || d == true){ std::cout << "\nUwuntu" << std::endl; exit; } else{std::cout << "\nThe date not exist" << std::endl; }   
     } 
   }
 };

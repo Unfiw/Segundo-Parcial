@@ -37,7 +37,7 @@ int main() {
 
 void exitD(){
   
-  std::cout << "Inserta una fecha valida" << std::endl;
+  std::cout << "Insert a correct date" << std::endl;
   getchar();
   getchar();
   main();
